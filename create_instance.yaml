@@ -17,6 +17,6 @@
     
   - name : Add instance to host group
     add_host:
-      hostname: "{{ item.imageId }}"
+      hostname: "{{ item.image_id }}"
       groupname: launched
     loop: "{{ ec2.instances }}"
