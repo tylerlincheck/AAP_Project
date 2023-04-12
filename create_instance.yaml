@@ -4,7 +4,6 @@
   tasks:
   - name: start an instance
     amazon.aws.ec2_instance:
-      name: "{{name}}"
       key_name: "{{key_name}}"
       vpc_subnet_id: "{{vpc_subnet_id}}"
       instance_type: "{{instance_type}}"
@@ -12,5 +11,4 @@
       network:
         assign_public_ip: true
       image_id: "{{image_id}}"
-      tags:
-        Environment: Testing
+      count: "{{count}}"
