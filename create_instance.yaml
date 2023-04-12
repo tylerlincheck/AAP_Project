@@ -13,7 +13,6 @@
       image_id: "{{image_id}}"
       count: "{{count}}"
     register: ec2
-    delegate_to: localhost
     - name : Add instance to host group
       add_host:
         hostname: "{{ item.public_ip }}"
