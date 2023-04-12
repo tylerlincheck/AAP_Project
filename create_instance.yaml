@@ -5,6 +5,7 @@
   - name: start an instance
     amazon.aws.ec2_instance:
       key_name: "{{key_name}}"
+      region: "{{region}}"
       vpc_subnet_id: "{{vpc_subnet_id}}"
       instance_type: "{{instance_type}}"
       security_group: "{{security_group}}"
