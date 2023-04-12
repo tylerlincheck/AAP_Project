@@ -13,8 +13,9 @@
       image_id: "{{image_id}}"
       count: "{{count}}"
     register: ec2
-    - name : Add instance to host group
-      add_host:
-        hostname: "{{ item.public_ip }}"
-        groupname: launched
-      loop: "{{ ec2.instances }}"
+    
+  - name : Add instance to host group
+    add_host:
+      hostname: "{{ item.public_ip }}"
+      groupname: launched
+    loop: "{{ ec2.instances }}"
