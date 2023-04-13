@@ -1,0 +1,15 @@
+--- 
+- name: Install packages
+  hosts: launched
+  remote_user: ec2_user
+  tasks:
+  - name: Gather facts
+    action: ec2_facts
+
+  - name: Install packages on ec2 instances
+    dnf:
+      name:
+        - sysstat
+        - httpd
+        - mariadb-server
+      state: latest
