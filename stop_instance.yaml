@@ -1,0 +1,15 @@
+--- 
+- name: Stop EC2 Instances
+  hosts: launched
+  remote_user: ec2_user
+  tasks:
+  - name: Gather facts
+    action: ec2_facts
+
+  - name: Stop EC2 Instances
+    amazon.aws.ec2: 
+      module: ec2
+      instance_ids: '{{ ansible_ec2_instance_id}}'
+      region: '{{ region }}'
+      state: stopped
+      wait: true 
