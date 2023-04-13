@@ -13,13 +13,3 @@
         assign_public_ip: true
       image_id: "{{image_id}}"
       count: "{{count}}"
-    register: ec2
-    
-  - name: Wait
-    pause: seconds=20
-    
-  - name : Add instance to host group
-    add_host:
-      hostname: "{{ item.public_ip_address }}"
-      groupname: launched
-    loop: "{{ ec2.instances }}"
