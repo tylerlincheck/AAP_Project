@@ -14,4 +14,4 @@
       image_id: "{{image_id}}"
       count: "{{count}}"
     ansible.builtin.wait_for:
-      timeout: 30
+      timeout: 60
