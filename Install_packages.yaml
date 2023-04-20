@@ -3,9 +3,6 @@
   hosts: aws_ec2
   remote_user: ec2-user
   tasks:
-  - name: Gather facts
-    action: ec2_facts
-
   - name: Install packages on ec2 instances
     dnf:
       name:
