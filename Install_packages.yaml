@@ -10,3 +10,4 @@
         - httpd
         - mariadb-server
       state: latest
+    become: true
