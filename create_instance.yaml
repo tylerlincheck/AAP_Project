@@ -13,3 +13,5 @@
         assign_public_ip: true
       image_id: "{{image_id}}"
       count: "{{count}}"
+    ansible.builtin.wait_for:
+      timeout: 30
